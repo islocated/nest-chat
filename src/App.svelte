@@ -1,30 +1,32 @@
 <script>
-	export let name;
+
+	import {tick} from 'svelte'
+
+	import io from 'socket.io-client'
+
+	import MessageList from './MessageList.svelte'
+	import MessageBar from './MessageBar.svelte'
+
+	const socket = io("http://localhost:8000");
+
+	let messages = [];
+	let username = 'UserName';
+
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+	.messages {
+        display: flex;
+		flex-flow: column;
+		height: 100vh;
+    }
 </style>
+
+
+
+<main>
+	<div class="messages">
+		<MessageList {socket} {messages} />
+		<MessageBar {socket} {username} />
+	</div>
+</main>
