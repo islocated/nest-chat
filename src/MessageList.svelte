@@ -26,7 +26,7 @@
 
 <style>
     .message-main {
-        flex-grow: 1;
+        flex: 1;
         overflow-y: auto;
         background-color: #36393f;
     }

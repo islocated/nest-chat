@@ -16,6 +16,8 @@ function createWindow() {
     mainWindow.on('closed', () => {
         mainWindow = null;
     });
+
+    mainWindow.maximize();
 }
 
 // This method will be called when Electron has finished

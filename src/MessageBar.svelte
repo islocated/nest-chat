@@ -21,7 +21,7 @@
     .message-bar {
         display: flex;
         flex-flow: row;
-        width: 100vw;
+        width: 100%;
     }
 
     .message-input {
@@ -33,6 +33,7 @@
         background-color: #40444b;
         font-family: "Tahoma";
         font-size: 16px;
+        width: 100%;
     }
 
     .message-button {
@@ -43,6 +44,7 @@
         background-color: #40444b;
         font-family: "Tahoma";
         font-size: 16px;
+        width: 100%;
     }
 
     .message-button:disabled{
